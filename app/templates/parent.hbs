@@ -1,0 +1,14 @@
+{{page-title 'Parent'}}
+<ul>
+  {{#each this.sortedModel as |item|}}
+    <li>
+      <button type="button" {{on 'click' (fn this.selectChild item)}}>
+        {{item.name}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
+<button type="button" {{on 'click' this.toggleSort}}>
+  Toggle order
+</button>
+{{outlet}}
